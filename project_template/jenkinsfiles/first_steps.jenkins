@@ -21,5 +21,10 @@ pipeline {
                 sh 'ssh vvv@192.168.130.102 \'uptime\''
             }
         }
+        stage("Final step") {
+            steps {
+                sh 'ssh vvv@192.168.130.102 \'uname -a\''
+            }
+        }
     }
 }
