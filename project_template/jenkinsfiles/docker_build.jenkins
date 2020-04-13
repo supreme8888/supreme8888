@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                sh 'docker build -t supreme888/toolbox:latest -f ./Docker_build.jenkins  .  '
+                sh 'docker build -t supreme888/toolbox:latest -f ./docker_build.jenkins  .  '
                 }
             }
         }
