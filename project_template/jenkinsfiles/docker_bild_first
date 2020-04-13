@@ -15,7 +15,8 @@ pipeline {
             steps {
                 echo " ============== start docker build  =================="
                 dir ('project_template/docker/toolbox') {
-                        sh 'docker build . '  # {
+                        sh 'docker build . '  
+# {
 #                echo " ============== docker build is finished with code= &? "
 #                 }
                 }
