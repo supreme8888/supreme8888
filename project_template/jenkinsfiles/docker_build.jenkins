@@ -6,6 +6,7 @@ pipeline {
     agent { 
         label 'master'
         }
+       triggers { pollSCM('* * * * *') }
        options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -25,7 +26,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t semaev/toolbox:latest . '
+                sh 'docker build -t supreme888/toolbox:latest . '
                 }
             }
         }
@@ -33,7 +34,7 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-                docker push semaev/toolbox:latest
+                docker push supreme888/toolbox:latest
                 '''
             }
         }
