@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo " ============== start docker build  =================="
                 dir ('project_template/docker/toolbox') {
-                        sh 'docker build . '
+                        sh 'ssh vvv@192.168.130.100 && docker build . '
                 }
             }
         }
